@@ -2,18 +2,13 @@
 
 使用pandas心得
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
 '''一、最简单的形式，说明原理'''
     df=DataFrame([4])
     df=DataFrame([4],index=['A'],columns=['b'])
     df=DataFrame({'b':4},index=['A'])
     '''特例：纵向重复'''
     df=DataFrame({'b':4},index=['A','B'])
-#    
+  
     '''二、1、两个数据：说明方向：axis=1'''
     df=DataFrame([4,2],index=['a','b'],columns=['A'])
     df=DataFrame({'A':[4,2]},index=['a','b'])
@@ -22,7 +17,7 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
     df=DataFrame([{'A':4,'B':2}],index=['a'])
     '''特例：纵向重复'''
     df=DataFrame([{'A':4,'B':2}],index=['a','b'])
-##    
+  
     '''三、默认形式'''
     df=DataFrame([[14,2],[3,5]],index=['a','b'],columns=['A','B'])
     df=DataFrame({'A':[14,2],'B':[3,5]},index=['a','b'])
@@ -33,7 +28,7 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
     
     '''没有特例'''
     df=DataFrame([{'A':[4,2],'B':[3,5]}],index=['a','b'])
-#    
+
     '''四、MultiIndex:'''
     '''    1、多级index'''
     '''最简单多级index:展开形式，生成方式_1'''
@@ -42,11 +37,11 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
     '''增加name'''
     tuples = list(zip(*arrays))
     index = pd.MultiIndex.from_tuples(tuples, names=['first', 'second'])
-#    
+   
     '''最简单多级index:生成方式  2'''
     iterables = [['bar', 'baz', 'foo', 'qux'], ['one', 'two']]
     index=pd.MultiIndex.from_product(iterables, names=['first', 'second'])
-#    
+ 
     '''两种区别：index有无name'''
 #    index=pd.MultiIndex.from_product(iterables)
     
@@ -173,12 +168,4 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
         print(row)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Maguscoder/pandas_use.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
